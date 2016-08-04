@@ -1,0 +1,45 @@
+_repo: The-Octopus---A-story-of-California_268
+_version: 0.0.1
+creator:
+  author:
+    agent_name: Norris, Frank
+    alias: Norris, Benjamin Franklin
+    birthdate: 1870
+    deathdate: 1902
+    gutenberg_agent_id: '103'
+    url: http://www.gutenberg.org/2009/agents/103
+    wikipedia: http://en.wikipedia.org/wiki/Frank_Norris
+description: "The Octopus: A Story of California is a 1901 novel by Frank Norris and\
+  \ was meant to be the first part of an uncompleted trilogy, The Epic of the Wheat.\
+  \ It describes the wheat industry in California, and the conflicts between wheat\
+  \ growers and a railway company. Norris was inspired to write the novel by the Central\
+  \ Pacific Railroad and the Mussel Slough Tragedy. In the novel he depicts the tensions\
+  \ between the railroad, the ranchers and the ranchers' League. The book emphasized\
+  \ the control of \"forces\"—such as the power of railroad monopolies—over individuals.\
+  \ Some editions of the work give the subtitle as alternately, A California Story.\n\
+  \ From Wikipedia (CC BY-SA)."
+gutenberg_issued: '2008-07-11'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '268'
+  wikidata: Q7754678
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'San Joaquin Valley (Calif.) -- Fiction'
+- !lcsh 'Farm life -- Fiction'
+- !lcc 'PS'
+- !lcsh 'Mussel Slough Tragedy, 1880 -- Fiction'
+- !lcsh 'Wheat farmers -- Fiction'
+- !lcsh 'Didactic fiction'
+- !lcsh 'California -- Fiction'
+- !lcsh 'Farmers -- Fiction'
+- !lcsh 'Railroad stories'
+- GITenberg
+title: 'The Octopus : A Story of California'
+url: http://www.gutenberg.org/ebooks/268
+wikipedia:
+- https://sh.wikipedia.org/wiki/The_Octopus:_A_Story_of_California
+- https://en.wikipedia.org/wiki/The_Octopus:_A_Story_of_California
