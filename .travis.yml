@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: PgxKjW1aMoOr0u8E/rU7JYHJNKvEF0t0aUKMG9gFzyFthmKS7yiHwdcf9lgryxVZZf2EKS0UAC8Tq5w2+hbVpbi+GTSmzrkMRsJiJ+MF554MsAZ/HtAQwTgFa+R+r407F0Z/RaCLB6jPJr7qLDVuBaSE+lwayxKIbQm0tnW/90zOittktArhAp0mbn8j3sslw2AZ+YkGh/WydBXz4ZpvaPE0XhI9Y/urxnE5tdeGJHDObfvXy/P79L2ZquCPp4GnXPAbtmE3sHzJvYsyQiDz3kRAY/laB9eSo67b/0NIGVuABsO+/ycQAdWNSyygi3cZG1O5Ez+TePOA+GSDyKNlWpi8c57Y/mGAfGLQJ44LNS7r/Gv74Rl3KuiHHcYHK5e9aoZCzzeJTokm6SIMDMv+xnomT3cWG0Tolzw6zoYzDXmzkTJzL/n0Mjgv6OmvyWwb/eyECGfBKwtm8v+cHOs9DMUq56bzIYz+pJdDn4mhqi6+KlIZ241SiIoby6EV51ekxFB7szstMoRBOc5TTgT67PbptKGicr89R34nLY5DdGUB0ElyUbyGxL8LyFurWL/j+HD/rGc+D4RXxW6XiIhS3Y7XyByNbN0RVKn7eBknoiYwre1LIa6+AMzUg7FY0oUjfBxS00HcOw/kz/UQU7m20EUJU0iSw5z6pcdpOKOpNDw=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Octopus---A-story-of-California_268
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
