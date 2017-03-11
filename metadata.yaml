@@ -1,5 +1,8 @@
 _repo: The-Octopus---A-story-of-California_268
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Norris, Frank
@@ -18,6 +21,8 @@ description: "The Octopus: A Story of California is a 1901 novel by Frank Norris
   \ the control of \"forces\"—such as the power of railroad monopolies—over individuals.\
   \ Some editions of the work give the subtitle as alternately, A California Story.\n\
   \ From Wikipedia (CC BY-SA)."
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/268#The-Octopus---A-story-of-California
 gutenberg_issued: '2008-07-11'
 gutenberg_type: Text
 identifiers:
